@@ -6,7 +6,7 @@ export interface IHTTPSuccessResponse<T = undefined> {
 export interface IHTTPErrorResponse {
     status: 'error'
     message: string
-    code: number
+    code: number | undefined
     body?: Record<string, string>
 }
 

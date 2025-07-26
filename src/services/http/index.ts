@@ -5,6 +5,7 @@ const http = axios.create({
     baseURL: '/api',
     headers: { withCredentials: true },
 })
+
 export const handleHttpResponse = <T extends any>(response: AxiosResponse<T>): IHTTPSuccessResponse<T> => {
     return { status: 'success', body: response.data }
 }
@@ -14,10 +15,12 @@ export const handleHttpError = (error: AxiosError): IHTTPErrorResponse => {
         return {
             status: 'error',
             message: 'С вашими данными что-то не так',
-            code: error?.response?.status,
+            code: error?.response?.status ,
             body: error?.response?.data as Record<string, string>,
         }
     }
+
+
     return {
         status: 'error',
         message: error?.message,

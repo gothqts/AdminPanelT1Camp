@@ -1,18 +1,20 @@
 import { useEffect, useState } from 'react'
 
-const useHandleResize = () => {
+const useHandleResize = (): number => {
     const [width, setWidth] = useState<number>(window.innerWidth);
 
-    const handleResize = (e )=>{
-        setWidth(e.target.innerWidth);
+    const handleResize = () => {
+        setWidth(window.innerWidth);
     }
+
     useEffect(() => {
         window.addEventListener('resize', handleResize);
         return () => {
             window.removeEventListener('resize', handleResize);
         }
     }, [])
-    return width
+
+    return width;
 }
 
-export default useHandleResize
+export default useHandleResize;
