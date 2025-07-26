@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["vite/client"],
+    "skipLibCheck": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    /* Linting */
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noFallthroughCasesInSwitch": true,
+    "strict": true,
+    "target": "ESNext",
+    "strictNullChecks": true,
+
+    "moduleResolution": "bundler",
+
+    "noEmit": true,
+    "baseUrl": "src",
+    "paths": {
+      "assets/*": ["assets/*"],
+      "navigation/*": ["navigation/*"],
+      "services/*": ["services/*"],
+      "screens/*": ["screens/*"],
+      "shared/*": ["shared/*"],
+      "styles/*": ["styles/*"],
+      "types/*": ["types/*"],
+      "utils/*": ["utils/*"]
+    }
+  },
+  "include": ["src"]
+}
+

@@ -1,0 +1,49 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ballLoader {
+    width: 100px;
+    height: 15px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.ballLoaderBall {
+    will-change: transform;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: var(--blue);
+    position: absolute;
+    animation: grow 0.7s ease-in-out infinite alternate;
+}
+
+.ballLoaderBall.ball1 {
+    left: 0;
+    transform-origin: 100% 50%;
+}
+
+.ballLoaderBall.ball2 {
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+    -webkit-animation-delay: 0.33s;
+    animation-delay: 0.33s;
+}
+
+.ballLoaderBall.ball3 {
+    right: 0;
+    -webkit-animation-delay: 0.66s;
+    animation-delay: 0.66s;
+}
+
+@keyframes grow {
+    to {
+        transform: translateX(-50%) scale(0);
+    }
+}
